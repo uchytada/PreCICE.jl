@@ -6,7 +6,7 @@ end
 if haskey(ENV, "PRECICE_JL_BINARY")
     libprecicePath = ENV["PRECICE_JL_BINARY"]
     @info("detected custom preCICE binary configuration: $libprecicePath")
-    libprecice = joinpath(libprecicePath, "libprecice.so")
+    libprecice = joinpath(libprecicePath, "libprecice")
     try
         Libc.Libdl.dlopen(libprecice)
         push!(Libc.Libdl.DL_LOAD_PATH, libprecice)
